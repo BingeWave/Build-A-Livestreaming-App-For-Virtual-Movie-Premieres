@@ -22,4 +22,4 @@ In addition to  reading the tutorials, to  use  this  example  repo, follow thes
 2. Clone this repo to your local computer
 3. In the .env file paste a distributor id and an auth token. Both can be obtained when you register for your account.
 4. Make sure NodeJS is installed, and run `npm install` in the root directory
-5. After installation, run npm start. This will boot the React application you can now play with on your local computer
+5. After installation, run `npm start`. This will boot the React application you can now play with on your local computer
