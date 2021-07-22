@@ -6,39 +6,35 @@ import Errors from '../components/errors';
 class UploadVideoPage extends React.Component {
 
   constructor(props) {
-   
+
     super(props);
 
     this.submitForm = this.submitForm.bind(this);
 
     this.state = {
-      title : '',
-      description : '',
-      type : 0,
-      selectedFile : null,
-      errors : null
+      title: '',
+      description: '',
+      type: 0,
+      selectedFile: null,
+      errors: null
     };
   }
 
   submitForm() {
-    console.log("Submitting Form");
-    console.log(this.state);
 
     let that = this;
-    
-    API.createVideo(this.state, function(data){
 
-      console.log(data);
+    API.createVideo(this.state, function (data) {
 
-      if(that.state.selectedFile){
+      if (that.state.selectedFile) {
 
-        API.uploadVideo(data.id, that.state.selectedFile, function(response){
-          
+        API.uploadVideo(data.id, that.state.selectedFile, function (response) {
+
           //Completed in uploading video file
           window.location = '/videos';
 
-        }, function(errors){
-          that.setState({errors: errors});
+        }, function (errors) {
+          that.setState({ errors: errors });
         });
 
       } else {
@@ -46,9 +42,8 @@ class UploadVideoPage extends React.Component {
         window.location = '/videos';
 
       }
-    }, function(errors){
-      console.log(errors);
-      that.setState({errors: errors});
+    }, function (errors) {
+      that.setState({ errors: errors });
     });
   }
 
@@ -100,7 +95,7 @@ class UploadVideoPage extends React.Component {
             <label htmlFor="file" className="form-label">
               File
             </label>
-            <input type="file" id="file" onChange={(e) => this.setState({ selectedFile: e.target.files[0] })}  />
+            <input type="file" id="file" onChange={(e) => this.setState({ selectedFile: e.target.files[0] })} />
           </div>
           {errorTag}
           <div className="col-12">

@@ -44,10 +44,10 @@ class ViewEventPage extends React.Component {
         
         //ensures the widgets load after the state is set
         if(window.BingewaveConnector){
-          window.BingewaveConnector.parseTags();
+          window.BingewaveConnector.init();
         } else {
           setTimeout(() => {
-            window.BingewaveConnector.parseTags();
+            window.BingewaveConnector.init();
           }, 3000);
         }
     });
@@ -65,7 +65,6 @@ class ViewEventPage extends React.Component {
 
     let that = this;
 
-    console.log(playEntireBlock);
     API.startStream(this.state.event.id, playEntireBlock, playSelectVideo, function (data) {
       alert("Stream successfully started");
     }, function (errors) {
