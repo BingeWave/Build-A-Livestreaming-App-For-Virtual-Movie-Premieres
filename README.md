@@ -1,5 +1,5 @@
 
-# Creating A Live Streaming App For Virtual Movies * Live TV
+# Creating A Live Streaming App For Live Virtual Movies And Live TV
 
 
 Welcome to this starter code for building a live streaming application for Live Movies and Live TV.  This repo is designed to accompany the following tutorials:
